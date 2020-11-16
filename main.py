@@ -1,7 +1,7 @@
 from ExpenseManager.ExpenseCalculator import FoodExpenseCalculator, ZooKeeperExpenseCalculator
 from HTTPController.HTTPHandler import HTTPRequestHandler, HTTPPostHandler
 from Utils.StaticConstants import *
-from Utils.Utilities import total_cost, convert_to_df
+from Utils.Utilities import total_cost, convert_to_df, return_dict
 
 
 def main():
@@ -35,14 +35,16 @@ def main():
     total_expenses = total_cost(total_food_cost, total_zookeeper_expense)
 
     # POST Expense data request
-    post_data = HTTPPostHandler(RESULT, total_expenses, ADMINISTRATION)
+    expense_dict = return_dict(RESULT, total_expenses)
+    post_data = HTTPPostHandler(expense_dict, ADMINISTRATION_EXT)
     response_status = post_data.post_data_to_URL()
-    print(response_status)
+    print("The response status for Post_Expense_Data is: {}".format(response_status))
 
     # POST costly compound to the respected director
-    post_data = HTTPPostHandler(COMPOUND, costly_compound, DIRECTOR)
+    expense_compound_dict = return_dict(COMPOUND, costly_compound)
+    post_data = HTTPPostHandler(expense_compound_dict, DIRECTOR_EXT)
     response_status = post_data.post_data_to_URL()
-    print(response_status)
+    print("The response status for Post_Costly_Compound is: {}".format(response_status))
 
 
 if __name__ == '__main__':

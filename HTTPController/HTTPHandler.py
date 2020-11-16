@@ -21,15 +21,14 @@ class HTTPRequestHandler:
 class HTTPPostHandler:
     """This class is responsible for posting the data to the server"""
 
-    def __init__(self, key, value, url):
-        self.key = key
+    def __init__(self, dict_pair, url):
+        self.dict = dict_pair
         self.url = url
-        self.value = value
 
     def post_data_to_URL(self):
         try:
-            post_request = requests.post(self.url, data={self.key: self.value})
-            # print(post_request.content)
-            return 'The status code for the post request is: {}'.format(post_request.status_code)
+            post_request = requests.post(self.url, data=self.dict)
+            #print(post_request.content)
+            return post_request.status_code
         except Exception as e:
             print(e)

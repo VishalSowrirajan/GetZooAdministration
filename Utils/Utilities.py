@@ -13,3 +13,8 @@ def convert_to_df(file):
 
 def total_cost(food_expense, zookeeper_expense):
     return food_expense + zookeeper_expense
+
+
+def return_dict(key, value):
+    custom_dict = {key : value}
+    return custom_dict
