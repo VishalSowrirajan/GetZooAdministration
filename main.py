@@ -1,5 +1,5 @@
 from ExpenseManager.ExpenseCalculator import FoodExpenseCalculator, ZooKeeperExpenseCalculator
-from HTTPController.HTTPRequestHandler import HTTPRequestHandler, HTTPPostHandler
+from HTTPController.HTTPHandler import HTTPRequestHandler, HTTPPostHandler
 from Utils.StaticConstants import *
 from Utils.Utilities import total_cost, convert_to_df
 
@@ -19,7 +19,7 @@ def main():
     print('Zookeeper URL data parsed successfully')
 
     # Convert to DataFrame
-    animal_df = convert_to_df(animal_data)
+    animal_df = convert_to_df([])
     food_df = convert_to_df(food_data)
     zookeeper_df = convert_to_df(zookeeper_data)
 
