@@ -19,7 +19,7 @@ def main():
     print('Zookeeper URL data parsed successfully')
 
     # Convert to DataFrame
-    animal_df = convert_to_df([])
+    animal_df = convert_to_df(animal_data)
     food_df = convert_to_df(food_data)
     zookeeper_df = convert_to_df(zookeeper_data)
 
