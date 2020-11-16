@@ -1,3 +1,5 @@
+# **AUTO1 GROUP CODING CHALLENGE**
+
 To reproduce the code, please run the following command:
 
 To install the required packages:
