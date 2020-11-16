@@ -8,3 +8,5 @@ DIRECTOR = BASE_URL + '/director'
 JSON_ERROR_MESSAGE = 'Empty JSON'
 
 WEEK_TO_DAY_CONVERSION = 7
+RESULT = 'result'
+COMPOUND = 'compound'

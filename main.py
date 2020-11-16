@@ -35,12 +35,12 @@ def main():
     total_expenses = total_cost(total_food_cost, total_zookeeper_expense)
 
     # POST Expense data request
-    post_data = HTTPPostHandler(total_expenses, ADMINISTRATION)
+    post_data = HTTPPostHandler(RESULT, total_expenses, ADMINISTRATION)
     response_status = post_data.post_data_to_URL()
     print(response_status)
 
     # POST costly compound to the respected director
-    post_data = HTTPPostHandler(costly_compound, DIRECTOR)
+    post_data = HTTPPostHandler(COMPOUND, costly_compound, DIRECTOR)
     response_status = post_data.post_data_to_URL()
     print(response_status)
 
