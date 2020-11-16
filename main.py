@@ -1,7 +1,7 @@
 from ExpenseManager.ExpenseCalculator import FoodExpenseCalculator, ZooKeeperExpenseCalculator
 from HTTPController.HTTPRequestHandler import HTTPRequestHandler, HTTPPostHandler
 from Utils.StaticConstants import *
-from Utils.utilities import total_cost, convert_to_df
+from Utils.Utilities import total_cost, convert_to_df
 
 
 def main():
