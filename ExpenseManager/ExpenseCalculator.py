@@ -48,7 +48,7 @@ class ZooKeeperExpenseCalculator:
         # WEEK TO DAY CONVERSION
         animal_food_type['total_animal_care_in_hours_per_day'] = animal_food_type['total_animal_care_in_hours_per_week'] / WEEK_TO_DAY_CONVERSION
         cost_of_zookeeper_per_day = animal_food_type['total_animal_care_in_hours_per_day'] * compound_sorted['hourly_rate']
-        # Get the index of the max value and slice the compound_sorted df to get the expensive compound
+        # Get the index of the max value and slice the compound_sorted df to get the expensive compound. This method ensures scalability
         expensive_compound_data = compound_sorted.iloc[cost_of_zookeeper_per_day.idxmax()]
         return cost_of_zookeeper_per_day.sum(), expensive_compound_data['compound']
 
