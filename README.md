@@ -1,4 +1,4 @@
-# **AUTO1 GROUP CODING CHALLENGE**
+# **Data Crawler**
 
 To reproduce the code, please run the following command:
 
